@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RSA_Crypt", "RSA_Crypt\RSA_Crypt.vcxproj", "{2F386CB0-B396-40B1-B43A-E350A42D44F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2F386CB0-B396-40B1-B43A-E350A42D44F9}.Debug|x64.ActiveCfg = Debug|x64
+		{2F386CB0-B396-40B1-B43A-E350A42D44F9}.Debug|x64.Build.0 = Debug|x64
+		{2F386CB0-B396-40B1-B43A-E350A42D44F9}.Debug|x86.ActiveCfg = Debug|Win32
+		{2F386CB0-B396-40B1-B43A-E350A42D44F9}.Debug|x86.Build.0 = Debug|Win32
+		{2F386CB0-B396-40B1-B43A-E350A42D44F9}.Release|x64.ActiveCfg = Release|x64
+		{2F386CB0-B396-40B1-B43A-E350A42D44F9}.Release|x64.Build.0 = Release|x64
+		{2F386CB0-B396-40B1-B43A-E350A42D44F9}.Release|x86.ActiveCfg = Release|Win32
+		{2F386CB0-B396-40B1-B43A-E350A42D44F9}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B4ECEF9E-741B-4AB0-AC22-0228D4BE1B46}
+	EndGlobalSection
+EndGlobal
