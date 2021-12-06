@@ -67,35 +67,35 @@ void gen_all_keys(HCRYPTPROV& prov, HCRYPTKEY& hExchangeKey, HCRYPTKEY& hSession
 void save_keys(HCRYPTKEY& hExchangeKey, HCRYPTKEY& hExportKey)
 {
 	{ // Записывает приватный ключ ExchangeKey шифрованный ExportKey благодаря методу CryptExportKey
-		vector<char> v;
+		vector<char> vPrivateKey;
 		DWORD dwLen = 0;
 		if (!CryptExportKey(hExchangeKey, hExportKey, PRIVATEKEYBLOB, 0, NULL, &dwLen))
 		{
 			cw("PrivateKey-> ExportKey[1] Error");
 			return;
 		}
-		v.resize(dwLen);
-		if (!CryptExportKey(hExchangeKey, hExportKey, PRIVATEKEYBLOB, 0, (BYTE*)v.data(), &dwLen))
+		vPrivateKey.resize(dwLen);
+		if (!CryptExportKey(hExchangeKey, hExportKey, PRIVATEKEYBLOB, 0, (BYTE*)vPrivateKey.data(), &dwLen))
 			cw("PrivateKey-> ExportKey[2] Error");
-		v.resize(dwLen);
+		vPrivateKey.resize(dwLen);
 		ofstream out("private.key", ios::binary);
-		out.write(v.data(), v.size());
+		out.write(vPrivateKey.data(), vPrivateKey.size());
 	}
 
 	{ // Записывает публичный ключ из ExchangeKey, шифруя его NULL в поле ExportKey в методе CryptExportKey
-		vector<char> v;
+		vector<char> vPublicKey;
 		DWORD dwLen = 0;
 		if (!CryptExportKey(hExchangeKey, NULL, PUBLICKEYBLOB, 0, NULL, &dwLen))
 		{
 			cw("PublicKey-> ExportKey[1] Error");
 			return;
 		}
-		v.resize(dwLen);
-		if (!CryptExportKey(hExchangeKey, NULL, PUBLICKEYBLOB, 0, (BYTE*)v.data(), &dwLen))
+		vPublicKey.resize(dwLen);
+		if (!CryptExportKey(hExchangeKey, NULL, PUBLICKEYBLOB, 0, (BYTE*)vPublicKey.data(), &dwLen))
 			cw("PublicKey-> ExportKey[2] Error");
-		v.resize(dwLen);
+		vPublicKey.resize(dwLen);
 		ofstream out("public.key", ios::binary);
-		out.write(v.data(), v.size());
+		out.write(vPublicKey.data(), vPublicKey.size());
 	}
 
 	cw("...Saving keys finished");
